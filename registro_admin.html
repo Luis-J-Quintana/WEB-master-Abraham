@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="estilo.css">
+    <title>SneakerBoutique</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="logo-titulo">
+                <a href="index.php">
+                    <i class="fa-regular fa-circle-dot"></i>
+                    <h1>SneakerBoutique</h1>
+                </a>
+            </div>
+            <nav id="nav">
+                <a href="dashboard.html" class="selected">Inicio</a>
+                <a href="productos.html" >Productos</a>
+                <a href="registro_admin.html">Administradores</a>
+                <span id="close-responsive">
+                    <i class="fa-solid fa-xmark"></i>
+                </span>
+            </nav>
+            <div id="nav-responsive">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="carrito">
+                </a>
+            </div>
+        </header>
+
+        <section class="contenedor-seccion">
+            <div class="fondo-seccion"></div>
+            <div class="header-seccion">
+                <div class="col">
+                    <strong><span class="link-blanco">Administrador</span> / Inicio</strong>
+                </div>
+                <div class="centro">
+                    <h2>Registro / Administrador</h2>
+                </div>
+            </div>
+            <section id="blog" class="blog">
+                <div class="formulario-login">
+                    <form id="registroForm" action="dashboard.html">
+                        <label for="nombreAdmin">Nombre de administrador:</label>
+                        <input type="text" id="nombreAdmin" name="nombreAdmin" required>
+    
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" required>
+    
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" id="contrasena" name="contrasena" required>
+
+                        <button type="submit">Registrarse</button>
+                    </form>
+                    <div id="mensajeRegistro" style="display: none;">Administrador registrado exitosamente</div>
+                </div>
+            </section>
+        </section>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var formulario = document.getElementById('registroForm');
+            var mensajeRegistro = document.getElementById('mensajeRegistro');
+    
+            formulario.addEventListener('submit', function (event) {
+                // Evitar que el formulario se envíe automáticamente
+                event.preventDefault();
+    
+                // Muestra el mensaje de registro
+                mensajeRegistro.style.display = 'block';
+    
+                // Simula la redirección al dashboard después de 2 segundos
+                setTimeout(function () {
+                    window.location.href = formulario.action;
+                }, 2000);
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
